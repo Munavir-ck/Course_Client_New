@@ -11,7 +11,7 @@ export const  useSocket =()=>{
 
 export const SocketProvider=(probs)=> {
 
-    const socket=useMemo(()=>io("http://localhost:5001"))
+    const socket=useMemo(()=>io(process.env.REACT_APP_SERVER_URL))
   return (
     <socketContext.Provider  value={socket}>
       {probs.children}
